@@ -7,6 +7,30 @@
         height: 100vh;
         margin: 0;
     }
+        #BBDD {
+        background-color: #ffcccb;
+    }
+    #Programacion {
+        background-color: #add8e6;
+    }
+    #Entornos {
+        background-color: #90ee90;
+    }
+    #SI {
+        background-color: #ffff99;
+    }
+    #LM {
+        background-color: #ffb6c1;
+    }
+    #IPE {
+        background-color: #d3d3d3;
+    }
+    #Sostenibilidad {
+        background-color: #ffa500;
+    }
+    #Digital {
+        background-color: #dda0dd;
+    }
 
     table {
         border-collapse: collapse;
@@ -39,30 +63,7 @@
         font-weight: bold;
     }
     
-    #BBDD {
-        background-color: #ffcccb;
-    }
-    #Programacion {
-        background-color: #add8e6;
-    }
-    #Entornos {
-        background-color: #90ee90;
-    }
-    #SI {
-        background-color: #ffff99;
-    }
-    #LM {
-        background-color: #ffb6c1;
-    }
-    #IPE {
-        background-color: #d3d3d3;
-    }
-    #Sostenibilidad {
-        background-color: #ffa500;
-    }
-    #Digital {
-        background-color: #dda0dd;
-    }
+
 
     @media (max-width: 400px) {
         table {
