@@ -1,6 +1,12 @@
 body{
     background-color: cadetblue;
 }
+header{
+    text-align: center;/*Alineacion de texto*/
+    padding: 20px;
+    background-color: burlywood;
+    color: #ffffff;
+}
 h1{
     color: bisque;
     text-align: center;
