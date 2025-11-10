@@ -1,26 +1,19 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
-/* Fondo general */
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color:rosybrown;
+    background-color: rosybrown;
     color: #ffffff;
+    margin: 0;
 }
 
-/* ===== NAVBAR ===== */
+
 header {
-    background-color:burlywood;
-    position: fixed;
+    background-color: burlywood;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .navbar {
@@ -37,7 +30,7 @@ header {
     font-weight: bold;
 }
 
-/* Menú de navegación */
+
 .menu {
     list-style: none;
     display: flex;
@@ -58,10 +51,20 @@ header {
     color: wheat;
 }
 
-/* ===== CONTENIDO PRINCIPAL ===== */
 main {
-    padding-top: 120px; /* deja espacio para la barra fija */
+    padding-top: 160px;
     text-align: center;
+}
+
+.caja {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid wheat;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 40px auto;
+    width: 80%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    box-sizing: border-box;
 }
 
 .intro h2 {
@@ -74,7 +77,6 @@ main {
     font-size: 1.1rem;
 }
 
-/* ===== FOOTER ===== */
 footer {
     background-color: darksalmon;
     color: #fff;
@@ -91,4 +93,30 @@ footer a {
 
 footer a:hover {
     color: #ffe600;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .caja {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .intro h2 {
+        font-size: 1.6rem;
+    }
+
+    .intro p {
+        font-size: 1rem;
+    }
 }
