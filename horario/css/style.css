@@ -7,28 +7,29 @@
         height: 100vh;
         margin: 0;
     }
-        #BBDD {
+    
+    td.BBDD {
         background-color: #ffcccb;
     }
-    #Programacion {
+    td.Programacion {
         background-color: #add8e6;
     }
-    #Entornos {
+    td.Entornos {
         background-color: #90ee90;
     }
-    #SI {
+    td.SI {
         background-color: #ffff99;
     }
-    #LM {
+    td.LM {
         background-color: #ffb6c1;
     }
-    #IPE {
+    td.IPE {
         background-color: #d3d3d3;
     }
-    #Sostenibilidad {
+    td.Sostenibilidad {
         background-color: #ffa500;
     }
-    #Digital {
+    td.Digital {
         background-color: #dda0dd;
     }
 
