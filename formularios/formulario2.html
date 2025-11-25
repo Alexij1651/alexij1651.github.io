@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cuestionario - Amigos de la Informática</title>
+    <link rel="stylesheet" href="./css/form2.css">
+</head>
+<body>
+
+<h2 class="titulo">Rellena el siguiente cuestionario para formar parte del club de "Amigos de la informática"</h2>
+
+<form class="formulario">
+
+    <!-- DATOS PERSONALES -->
+    <fieldset class="bloque">
+        <legend>Datos personales</legend>
+
+        <label>Nombre:
+            <input type="text">
+        </label>
+
+        <label>Domicilio:
+            <input type="text" placeholder="<calle, numero y localidad>">
+        </label>
+
+        <label>País de origen:
+            <select>
+                <option>España</option>
+                <option>México</option>
+                <option>Argentina</option>
+                <option>Chile</option>
+                <option>Otro</option>
+            </select>
+        </label>
+
+        <label>Fecha de nacimiento:
+            <input type="text" placeholder="dd/mm/aaaa">
+        </label>
+
+        <label>Correo electrónico:
+            <input type="email">
+        </label>
+
+        <label>Teléfono:
+            <input type="text">
+        </label>
+
+        <div class="grupo-radio">
+            <label>Estado civil:</label>
+            <label><input type="radio" name="civil"> Solter@</label>
+            <label><input type="radio" name="civil"> Casad@</label>
+            <label><input type="radio" name="civil"> Separad@</label>
+            <label><input type="radio" name="civil"> Viud@</label>
+        </div>
+
+        <div class="grupo-radio">
+            <label>Sexo:</label>
+            <label><input type="radio" name="sexo"> Hombre</label>
+            <label><input type="radio" name="sexo"> Mujer</label>
+        </div>
+    </fieldset>
+
+    <!-- OTRA INFORMACIÓN -->
+    <fieldset class="bloque">
+        <legend>Otra información de interés</legend>
+
+        <label>Seleccione los componentes electrónicos con los que habitualmente trabajas:
+            <select multiple size="4">
+                <option>Móvil</option>
+                <option>Tablet</option>
+                <option>Ordenador</option>
+                <option>Ebook</option>
+            </select>
+        </label>
+
+        <p>Selecciona tus actividades favoritas:</p>
+
+        <div class="checks">
+            <label><input type="checkbox"> Hacer deporte</label>
+            <label><input type="checkbox"> Salir con mis amigos</label>
+            <label><input type="checkbox"> Ver series, pelis…</label>
+            <label><input type="checkbox"> Realizar rutas de senderismo</label>
+            <label><input type="checkbox"> Ir al cine</label>
+            <label><input type="checkbox"> Escuchar música</label>
+        </div>
+
+        <label>Explique brevemente el motivo por el que desea ingresar en nuestro club:
+            <textarea rows="4"></textarea>
+        </label>
+
+        <label>Elige o escribe tu peli favorita:
+            <input type="text">
+        </label>
+    </fieldset>
+
+    <div class="botones">
+        <button type="submit">Enviar</button>
+        <button type="reset" class="cancelar">Cancelar</button>
+    </div>
+
+</form>
+
+</body>
+</html>

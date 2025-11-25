@@ -1,0 +1,81 @@
+/* Fondo general */
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #2b5876, #4e4376);
+    color: white;
+}
+
+/* Encabezado */
+header {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+header p {
+    margin-top: 5px;
+    font-size: 18px;
+    opacity: 0.9;
+}
+
+/* Contenedor principal */
+.contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 40px;
+}
+
+/* Tarjetas */
+.tarjeta {
+    background: white;
+    color: #333;
+    padding: 25px;
+    border-radius: 15px;
+    width: 280px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.25);
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tarjeta:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+.tarjeta h2 {
+    margin-top: 0;
+    font-size: 22px;
+}
+
+/* Botón moderno */
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #4e4376;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.25s;
+}
+
+.btn:hover {
+    background: #2b5876;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    padding: 20px;
+    opacity: 0.7;
+    font-size: 14px;
+}

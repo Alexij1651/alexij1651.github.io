@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dejar una Reseña</title>
+    <link rel="stylesheet" href="../css/forms.css">
+</head>
+<body>
+
+<header>
+    <h1>Dejar una Reseña</h1>
+</header>
+
+<main>
+    <section class="formulario-box">
+        <h2>Formulario de Reseña</h2>
+
+        <form class="formulario">
+            <label>Nombre:
+                <input type="text">
+            </label>
+
+            <label>Plato:
+                <input type="text" placeholder="Nombre del plato" required>
+            </label>
+
+            <label>Puntuación:
+                <select required>
+                    <option value="">-- Selecciona --</option>
+                    <option>⭐ 1</option>
+                    <option>⭐⭐ 2</option>
+                    <option>⭐⭐⭐ 3</option>
+                    <option>⭐⭐⭐⭐ 4</option>
+                    <option>⭐⭐⭐⭐⭐ 5</option>
+                </select>
+            </label>
+
+            <label>Comentario:
+                <textarea rows="4" required></textarea>
+            </label>
+
+            <button type="submit">Enviar Reseña</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>© 2025 - Restaurante</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Hoja de Inscripción</title>
+    <link rel="stylesheet" href="./css/form1.css">
+</head>
+<body>
+
+<h1 class="titulo">HOJA DE INSCRIPCIÓN</h1>
+<h2 class="subtitulo">EN LOS CICLOS FORMATIVOS DE GRADO SUPERIOR</h2>
+
+<form class="formulario">
+
+    <!-- DATOS PERSONALES -->
+    <fieldset class="bloque gris">
+        <legend>Datos Personales</legend>
+
+        <div class="fila">
+            <label>Nombre:<br>
+                <input type="text">
+            </label>
+
+            <label>Apellidos:<br>
+                <input type="text">
+            </label>
+
+            <label>DNI:<br>
+                <input type="text">
+            </label>
+        </div>
+
+        <div class="fila">
+            <label>Localidad de Nacimiento:<br>
+                <input type="text">
+            </label>
+
+            <label>Provincia:<br>
+                <select>
+                    <option>Huelva</option>
+                    <option>Sevilla</option>
+                    <option>Cádiz</option>
+                    <option>Granada</option>
+                </select>
+            </label>
+
+            <label>Fecha de Nacimiento:<br>
+                <input type="text" placeholder="dd/mm/aaaa">
+            </label>
+        </div>
+
+        <div class="fila">
+            <label>Dirección:<br>
+                <input type="text">
+            </label>
+
+            <label>Código Postal:<br>
+                <input type="text">
+            </label>
+        </div>
+
+    </fieldset>
+
+    <!-- FORMA DE ACCESO -->
+    <fieldset class="bloque naranja">
+        <legend>Forma de Acceso</legend>
+
+        <label><input type="radio" name="acceso"> Directo</label>
+
+        <div class="subopciones">
+            <label><input type="radio" name="directo"> Bachillerato Log Modalidad
+                <input type="text">
+            </label>
+
+            <label><input type="radio" name="directo"> Experimental
+                <input type="text">
+            </label>
+
+            <label><input type="radio" name="directo"> COU Opción
+                <input type="text">
+            </label>
+
+            <label><input type="radio" name="directo"> FP2</label>
+
+            <label><input type="radio" name="directo"> Otros (especifique):
+                <input type="text">
+            </label>
+        </div>
+
+        <label><input type="radio" name="acceso"> Prueba Libre</label>
+
+    </fieldset>
+
+    <!-- DOCUMENTOS ADJUNTADOS -->
+    <fieldset class="bloque rojo">
+        <legend>Documentos Adjuntados</legend>
+
+        <label><input type="checkbox"> Fotocopia DNI</label>
+        <label><input type="checkbox"> Certificado Académico</label>
+
+        <label><input type="checkbox"> Otros documentos (especifique)
+            <input type="text">
+        </label>
+    </fieldset>
+
+    <div class="botones">
+        <button type="submit">Enviar Solicitud</button>
+        <button type="reset">Limpiar datos</button>
+    </div>
+
+</form>
+
+</body>
+</html>
