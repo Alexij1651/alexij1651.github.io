@@ -4,44 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Salmorejo</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/recetas.css">
+        <link rel="icon" href="../../img/favicon.ico" type="image/x-icon">
 </head>
 <body>
-    <header>
-        <h1>Salmorejo</h1>
+    <header class="header">
+        <h1 class="title">Salmorejo</h1>
     </header>
 
     <main>
         <section class="receta">
-            <img src="../img/salmorejo.jpeg" alt="Salmorejo">
-            <h2>Ingredientes</h2>
-            <ul>
-                <li>150 ml de aceite de oliva virgen extra</li>
-                <li>1 Kg. de tomates rojos bien maduros</li>
-                <li>200 g. de pan de telera cordobesa</li>
-                <li>1 diente de ajo</li>
-                <li>10 g. de sal</li>
-            </ul>
+            <img src="../img/salmorejo.jpeg" alt="Salmorejo" class="receta-img">
+            
+            <div class="receta-ingredientes">
+                <h2 class="subtitulo">Ingredientes</h2>
+                <ul class="ingredientes-lista">
+                    <li>150 ml de aceite de oliva virgen extra</li>
+                    <li>1 Kg. de tomates rojos bien maduros</li>
+                    <li>200 g. de pan de telera cordobesa</li>
+                    <li>1 diente de ajo</li>
+                    <li>10 g. de sal</li>
+                </ul>
+            </div>
 
-            <h2>Receta a seguir</h2>
-            <ol>
-                <li>Limpiamos bien los tomates y los cortamos en cuartos, los añadimos a un bol grande y trituramos con la batidora hasta que nos quede una salsa líquida.</li>
-                <li>Pasamos esta salsa por un colador para retirar posibles trozos de piel y pequeñas pepitas que hayan quedado al batirlos.</li>
-                <li>Cortamos el pan en trozos pequeños y los añadimos a la crema de tomate anterior. Los dejamos reposar durante unos 10 minutos para que se ablande.</li>
-                <li>Pelamos el ajo, le quitamos el centro para evitar que repita y lo añadimos al tomate con el pan. Agregamos el aceite de oliva virgen extra y la sal. Batimos todo hasta que nos quede lo más fino posible.</li>
-                <li>Sólo nos queda meter el bol en la nevera y dejar que se enfríe durante un par de horas.</li>
-                <li>A la hora de la presentación, lo mejor es ponerlo en un plato hondo o cuenco. Espolvoreamos con unas virutas de jamón serrano o ibérico.</li>
-            </ol>
+            <div class="receta-pasos">
+                <h2 class="subtitulo">Receta a seguir</h2>
+                <ol class="pasos-lista">
+                    <li>Limpiamos bien los tomates y los cortamos en cuartos, los añadimos a un bol grande y trituramos con la batidora hasta que nos quede una salsa líquida.</li>
+                    <li>Pasamos esta salsa por un colador para retirar posibles trozos de piel y pequeñas pepitas que hayan quedado al batirlos.</li>
+                    <li>Cortamos el pan en trozos pequeños y los añadimos a la crema de tomate anterior. Los dejamos reposar durante unos 10 minutos para que se ablande.</li>
+                    <li>Pelamos el ajo, le quitamos el centro para evitar que repita y lo añadimos al tomate con el pan. Agregamos el aceite de oliva virgen extra y la sal. Batimos todo hasta que nos quede lo más fino posible.</li>
+                    <li>Sólo nos queda meter el bol en la nevera y dejar que se enfríe durante un par de horas.</li>
+                    <li>A la hora de la presentación, lo mejor es ponerlo en un plato hondo o cuenco. Espolvoreamos con unas virutas de jamón serrano o ibérico.</li>
+                </ol>
+            </div>
 
-            <a href="../pdf/salmorejo.pdf">Descargar PDF aquí</a>
-            <br><br>
-            <a href="../index.html">
-                <button>Volver al inicio</button>
-            </a>
+            <div class="descarga">
+                <a href="../pdf/salmorejo.pdf" class="btn-descargar">Descargar PDF aquí</a>
+            </div>
+
+            <div class="volver">
+                <a href="../index.html">
+                    <button class="btn-volver">Volver al inicio</button>
+                </a>
+            </div>
         </section>
     </main>
 
-    <footer>
+    <footer class="footer">
         <p>© 2025 Restaurante Ratatouille | Todos los derechos reservados.</p>
     </footer>
 </body>

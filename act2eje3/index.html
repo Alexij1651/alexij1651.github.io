@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <link rel="stylesheet" href="./css/style.css">
+    <!-- Meta Etiquetas SEO -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Restaurante Ratatouille - Cocina casera tradicional con recetas mediterráneas. Disfruta de nuestra tortilla de patatas, salmorejo y hummus, entre otras especialidades.">
+    <meta name="keywords" content="restaurante, Ratatouille, comida mediterránea, recetas tradicionales, tortilla de patatas, salmorejo, hummus, comida casera">
+    <meta name="author" content="Restaurante Ratatouille">
     <title>Restaurante Ratatouille</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
 </head>
+
 <body>
     <header>
         <nav>
@@ -14,24 +21,35 @@
     </header>
 
     <main>
-        <section class="intro">
-            <img src="/act2eje3/img/img20201011210943-largejpg.jpeg" alt="Imagen Restaurante" class="img-restaurante">
+        <section id="recetario" class="intro">
+            <img src="/act2eje3/img/img20201011210943-largejpg.jpeg" alt="Imagen del Restaurante" class="img-restaurante">
             <h2>Recetario Popular:</h2>
-            <a href="./html/receta1.html"><h3>Tortilla de patatas</h3></a>
-            <a href="./html/receta2.html"><h3>Salmorejo</h3></a>
-            <a href="./html/receta3.html"><h3>Hummus</h3></a>
+            <div class="recetas-lista">
+                <a href="./html/receta1.html"><h3>Tortilla de Patatas</h3></a>
+                <a href="./html/receta2.html"><h3>Salmorejo</h3></a>
+                <a href="./html/receta3.html"><h3>Hummus</h3></a>
+            </div>
+        </section>
+
+        <section id="formularios" class="formularios">
+            <h2>Formularios</h2>
+            <div class="formularios-lista">
+                <a href="./html/reserva.html"><h3>Reserva</h3></a>
+                <a href="./html/reseña.html"><h3>Reseña</h3></a>
+                <a href="./html/contacto.html"><h3>Contacto</h3></a>
+            </div>
+        </section>
+
+        <section class="volver">
             <a href="../index.html">
                 <button>Volver al inicio</button>
-            <h2>Formularios</h2>
-            <a href="./html/reserva.html"><h3>Reserva</h3></a>
-            <a href="./html/reseña.html"><h3>Reseña</h3></a>
-            <a href="./html/contacto.html"><h3>Contacto</h3></a>
             </a>
         </section>
     </main>
 
-    <footer>
+    <footer id="contacto">
         <p>© 2025 Restaurante Ratatouille | Todos los derechos reservados.</p>
     </footer>
+
 </body>
 </html>

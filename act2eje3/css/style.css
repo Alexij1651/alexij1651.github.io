@@ -7,39 +7,59 @@
 
 /* Fondo general */
 body {
-    font-family: 'Georgia', serif;
-    background-color: #f4e1d2; /* Color cálido suave */
-    color: #5b3a2f; /* Color oscuro para texto, similar a los tonos madera */
+    font-family: 'Roboto', sans-serif; /* Fuente moderna */
+    background-color: #fafafa; /* Fondo más claro */
+    color: #333; /* Color de texto oscuro para mejor legibilidad */
+    line-height: 1.6;
 }
 
 /* ===== HEADER ===== */
 header {
-    background-color: #e0a96d; /* Color dorado-terroso */
-    padding: 15px 0;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #ff9900, #ffcc00); /* Gradiente cálido */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 header h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: white;
+    text-align: center;
     text-transform: uppercase;
     letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+}
+
+header nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #ffcc00; /* Efecto hover en enlaces */
 }
 
 /* ===== MAIN ===== */
 main {
-    padding: 50px 20px;
+    padding: 40px 20px;
     text-align: center;
 }
 
-/* Sección de introducción con imagen */
 .intro {
-    background-color: #f9e5c0; /* Color suave, cálido, para el fondo */
-    padding: 30px;
+    background-color: #fdfdfd; /* Fondo blanco */
+    padding: 40px;
     border-radius: 10px;
-    margin: 20px 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
 }
 
 .img-restaurante {
@@ -50,22 +70,21 @@ main {
     margin-bottom: 20px;
 }
 
-/* Títulos y enlaces */
 h2 {
     font-size: 2rem;
-    color: #e3a24f; /* Color dorado */
+    color: #ff9900;
     margin-bottom: 20px;
 }
 
 h3 {
     font-size: 1.5rem;
-    color: #5b3a2f;
+    color: #333;
     margin: 10px 0;
     transition: color 0.3s ease;
 }
 
 h3:hover {
-    color: #e3a24f; /* Efecto hover para los enlaces */
+    color: #ff9900; /* Efecto hover en títulos */
 }
 
 a {
@@ -73,12 +92,11 @@ a {
     color: inherit;
 }
 
-/* Botón */
 button {
-    background-color: #e3a24f; /* Color dorado */
+    background-color: #ff9900;
     color: white;
     font-size: 1rem;
-    padding: 10px 20px;
+    padding: 12px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -86,16 +104,33 @@ button {
 }
 
 button:hover {
-    background-color: #d17e2a; /* Cambio de color cuando el botón es presionado */
+    background-color: #e68a00;
+}
+
+/* Sección Formularios */
+.formularios {
+    margin-top: 30px;
+}
+
+.formularios a {
+    display: block;
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.formularios a:hover {
+    color: #ff9900; /* Hover en formularios */
 }
 
 /* ===== FOOTER ===== */
 footer {
-    background-color: #5b3a2f; /* Color oscuro similar al del texto */
+    background-color: #333;
     color: white;
     text-align: center;
     padding: 15px;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 footer p {
@@ -105,7 +140,7 @@ footer p {
 /* Media Queries para pantallas pequeñas */
 @media screen and (max-width: 768px) {
     header h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     h2 {
@@ -113,7 +148,7 @@ footer p {
     }
 
     h3 {
-        font-size: 1.2rem;
+        font-size: 1.3rem;
     }
 
     .img-restaurante {
@@ -123,6 +158,6 @@ footer p {
 
     button {
         width: 100%;
-        padding: 12px 0;
+        padding: 14px 0;
     }
 }
