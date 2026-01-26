@@ -13,5 +13,5 @@ let dni = prompt("Introduce el DNI a buscar:");
 if (personas.has(dni)) {
   alert("Nombre: " + personas.get(dni));
 } else {
-  alert("❌ DNI no encontrado");
+  alert("DNI no encontrado");
 }

@@ -17,8 +17,8 @@ if (inventario.has(producto)) {
       console.log(k + ": " + v);
     });
   } else {
-    alert("❌ No hay stock disponible");
+    alert("No hay stock disponible");
   }
 } else {
-  alert("❌ Producto no existe");
+  alert("Producto no existe");
 }

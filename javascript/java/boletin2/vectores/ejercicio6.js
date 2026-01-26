@@ -13,7 +13,7 @@ while (intentos > 0 && !encontrado) {
   let y = parseInt(prompt("Introduce columna (0-19):"));
 
   if (x === tesoroX && y === tesoroY) {
-    alert("🎉 ¡Has encontrado el tesoro!");
+    alert("¡Has encontrado el tesoro!");
     encontrado = true;
   } else {
     let pista = "";
@@ -23,11 +23,11 @@ while (intentos > 0 && !encontrado) {
     if (y < tesoroY) pista += "este ";
     if (y > tesoroY) pista += "oeste ";
 
-    alert("❌ No está ahí. Pista: " + pista);
+    alert("No está ahí. Pista: " + pista);
     intentos--;
   }
 }
 
 if (!encontrado) {
-  alert(`💀 Has perdido. El tesoro estaba en [${tesoroX}][${tesoroY}]`);
+  alert(`Has perdido. El tesoro estaba en [${tesoroX}][${tesoroY}]`);
 }
