@@ -1,4 +1,4 @@
-let nombre = prompt("Introduce tu nombre:");
+let nombre = (prompt("Introduce tu nombre:"));
 let edad = Number(prompt("Introduce tu edad:"));
 let peso = Number(prompt("Introduce tu peso (kg):"));
 let estatura = Number(prompt("Introduce tu estatura (cm):"));
