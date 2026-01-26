@@ -5,10 +5,7 @@ let suma = num1 + num2;
 
 alert("La suma es: " + suma);
 
-// Comprobar si el primer número es un número
 console.log("¿El primer valor es un número?:", !isNaN(num1));
-
-// Comprobar si la suma es mayor que 20
 if (suma > 20) {
     console.log("La suma es mayor que 20");
 } else {
