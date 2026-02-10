@@ -1,3 +1,61 @@
+/**************************************************
+ * MENÚ DE LA CALCULADORA
+ **************************************************/
+function calculadora() {
+    let opcion;
+
+    do {
+        opcion = prompt(
+            "CALCULADORA\n" +
+            "1. Suma\n" +
+            "2. Resta\n" +
+            "3. Multiplicación\n" +
+            "4. División\n" +
+            "5. Resto (%)\n" +
+            "6. Potencia (**)\n" +
+            "0. Salir"
+        );
+
+        if (opcion === "0") break;
+
+        let a = Number(prompt("Introduce el primer número"));
+        let b = Number(prompt("Introduce el segundo número"));
+
+        if (isNaN(a) || isNaN(b)) {
+            alert("Error: datos incorrectos");
+            continue;
+        }
+
+        let resultado;
+
+        switch (opcion) {
+            case "1":
+                resultado = suma(a, b);
+                break;
+            case "2":
+                resultado = resta(a, b);
+                break;
+            case "3":
+                resultado = multiplicacion(a, b);
+                break;
+            case "4":
+                resultado = division(a, b);
+                break;
+            case "5":
+                resultado = division(a, b, true);
+                break;
+            case "6":
+                resultado = potencia(a, b);
+                break;
+            default:
+                alert("Opción incorrecta");
+                continue;
+        }
+
+        alert("Resultado: " + resultado);
+
+    } while (true);
+}
 function suma(a, b) {
     // Devuelve la suma directa
     return a + b;
@@ -80,63 +138,4 @@ function potencia(base, exponente) {
     }
 
     return resultado;
-}
-
-/**************************************************
- * MENÚ DE LA CALCULADORA
- **************************************************/
-function calculadora() {
-    let opcion;
-
-    do {
-        opcion = prompt(
-            "CALCULADORA\n" +
-            "1. Suma\n" +
-            "2. Resta\n" +
-            "3. Multiplicación\n" +
-            "4. División\n" +
-            "5. Resto (%)\n" +
-            "6. Potencia (**)\n" +
-            "0. Salir"
-        );
-
-        if (opcion === "0") break;
-
-        let a = Number(prompt("Introduce el primer número"));
-        let b = Number(prompt("Introduce el segundo número"));
-
-        if (isNaN(a) || isNaN(b)) {
-            alert("Error: datos incorrectos");
-            continue;
-        }
-
-        let resultado;
-
-        switch (opcion) {
-            case "1":
-                resultado = suma(a, b);
-                break;
-            case "2":
-                resultado = resta(a, b);
-                break;
-            case "3":
-                resultado = multiplicacion(a, b);
-                break;
-            case "4":
-                resultado = division(a, b);
-                break;
-            case "5":
-                resultado = division(a, b, true);
-                break;
-            case "6":
-                resultado = potencia(a, b);
-                break;
-            default:
-                alert("Opción incorrecta");
-                continue;
-        }
-
-        alert("Resultado: " + resultado);
-
-    } while (true);
 }
