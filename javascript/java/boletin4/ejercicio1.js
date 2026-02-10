@@ -67,7 +67,6 @@ function suma(a, b) {
  * SALIDA: resultado de la resta
  **************************************************/
 function resta(a, b) {
-    // Devuelve la resta directa
     return a - b;
 }
 
