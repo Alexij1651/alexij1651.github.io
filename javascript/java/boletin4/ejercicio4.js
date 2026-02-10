@@ -1,10 +1,10 @@
-let n = Number(prompt("Introduce el número de elementos"));
+let n = Number(prompt("Introduce el número de elementos: "));
 
 let vector = [];
 
 // Introducir valores desordenados
 for (let i = 0; i < n; i++) {
-    vector[i] = Number(prompt("Introduce el valor " + (i + 1)));
+    vector[i] = Number(prompt("Introduce el valor " + (i + 1)+": "));
 }
 
 console.log("Vector desordenado:", vector);
