@@ -29,6 +29,7 @@ function actividad4(){
 
 function actividad5(){
    const act5 = document.querySelectorAll("td");
+   //(Celda completa)style.backgroundColor="color";
   act5[0].style.color= "green";
   act5[1].style.color= "red";
 }
