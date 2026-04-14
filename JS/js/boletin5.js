@@ -26,6 +26,11 @@ function actividad4(){
   nueCeld.textContent= "soy Nueva";
   act4.appendChild(nueCeld);
 }
+/**
+ * const fila = tabla.rows[0]
+ * const nCelda= fila.insertCell();
+ * nCelda.innerText = "Celda"+(fila.cells.length);
+ */
 
 function actividad5(){
    const act5 = document.querySelectorAll("td");
