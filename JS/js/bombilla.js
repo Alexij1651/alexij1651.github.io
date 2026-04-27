@@ -1,3 +1,6 @@
+window.onload = function(){
+toggleBombilla();
+}
 let encendida = false;
 
 function toggleBombilla(){
