@@ -1,0 +1,78 @@
+:root {
+            --fondo: #1a1a1a;
+            --primario: #ff9800; /* El naranja que te gusta */
+            --celda: #332a1e;
+            --linea: #000000;
+        }
+
+        body {
+            background-color: var(--fondo);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* CUADRÍCULA MEJORADA */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(20, 20px); /* Celdas de 20px */
+            grid-template-rows: repeat(20, 20px);
+            gap: 1px; /* Esto crea las líneas de la cuadrícula */
+            background-color: var(--linea); /* Color de las líneas */
+            padding: 1px;
+            border: 2px solid var(--primario);
+            box-shadow: 0 0 20px rgba(255, 152, 0, 0.2);
+        }
+
+        .celda {
+            width: 20px;
+            height: 20px;
+            background-color: var(--primario); /* Color inicial de la celda */
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .celda:hover {
+            filter: brightness(1.2);
+        }
+
+        /* Estados de la celda */
+        .fallo {
+            background-color: #444 !important; /* Color tierra excavada */
+            pointer-events: none;
+        }
+
+        .tesoro {
+            background-color: #ffd700 !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .btn-reset {
+            margin-top: 25px;
+            padding: 10px 25px;
+            background-color: white;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #pista {
+            color: var(--primario);
+            height: 24px;
+            font-weight: bold;
+        }

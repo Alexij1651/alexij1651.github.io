@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/JS/css/tesoro.css">
+    <script src="/JS/js/tesoro.js"></script>
+  <title>Búsqueda del Tesoro</title>
+</head>
+<body>
+<div class="header">
+        <h1>🏴‍☠️ Encuentra el Tesoro</h1>
+        <p>Intentos restantes: <span id="intentos">10</span></p>
+        <div id="pista"></div>
+        <p id="mensaje">Haz clic en una cuadrícula para excavar</p>
+    </div>
+
+    <div class="grid" id="mapa">
+        <!-- Aquí el JS generará las 400 celdas -->
+    </div>
+
+    <button class="btn-reset" onclick="iniciarJuego()">Reiniciar Juego</button>
+</body>
+</html>
