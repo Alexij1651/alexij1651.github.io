@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parte 3 Act2</title>
+    <link rel="stylesheet" href="../css/pt3act2.css" />
+    <script src="../js/boletinpt3act2.js"></script>
+  </head>
+  <body>
+    <form class="formulario" onsubmit="event.preventDefault()">
+      <fieldset class="bloque">
+        <legend>Introduce un Número</legend>
+
+        <div class="fila">
+          <label
+            >Valor:
+            <input type="text" id="numero" placeholder="Ej: 9" />
+          </label>
+        </div>
+      </fieldset>
+      <div class="botones">
+        <button type="button" class="btn" onclick="actv2()">Iniciar</button>
+        <button type="reset" class="btn">Reiniciar</button>
+      </div>
+    </form>
+
+    <div id="mensaje"></div>
+  </body>
+</html>

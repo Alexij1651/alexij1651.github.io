@@ -1,10 +1,10 @@
 function actv1() {
-    const nombre = document.getElementById('nombreInput').value;
-    const apellidos = document.getElementById('apellidosInput').value;
-    const fechaNacValue = document.getElementById('fechaNacimiento').value;
+    const nombre = document.getElementById('nombre').value;
+    const apellidos = document.getElementById('apellidos').value;
+    const fechaNac = document.getElementById('fechaNacimiento').value;
     const contenedor = document.getElementById('mesaje');
 
-    if (!nombre || !apellidos || !fechaNacValue) {
+    if (!nombre || !apellidos || !fechaNac) {
         alert("Por favor, rellene todos los campos del formulario.");
         return;
     }
