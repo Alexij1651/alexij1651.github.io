@@ -2,43 +2,39 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Hoja de Inscripción</title>
-    <link rel="stylesheet" href="./css/form1.css">
-    <link rel="icon" href="../../img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../js/boletin5pt3act1.js">
+    <title>Hoja de Inscripción - Junta Oficial</title>
+    <link rel="stylesheet" href="../css/pt3act1.css">
+    <script src="../js/boletin5pt3act1.js" defer></script>
 </head>
 <body>
 
 <h1 class="titulo">HOJA DE INSCRIPCIÓN</h1>
-<h2 class="subtitulo">EN LOS CICLOS FORMATIVOS DE GRADO SUPERIOR</h2>
+<h2 class="subtitulo">SISTEMA DE GESTIÓN DE CICLOS FORMATIVOS</h2>
 
-<form class="formulario">
-
-    <!-- DATOS PERSONALES -->
-    <fieldset class="bloque gris">
+<form class="formulario" onsubmit="event.preventDefault()">
+    <fieldset class="bloque">
         <legend>Datos Personales</legend>
 
         <div class="fila">
-            <label id="nombre">Nombre:<br>
-                <input type="text">
-            </label><br>
-            <label>Apellidos:<br>
-                <input type="text">
-            </label><br>
-        <label id="edad">Edad:<br>
-            <input type="text">
-        </label>
+            <label>Nombre:
+                <input type="text" id="nombreInput" placeholder="Ej: Javier">
+            </label>
+            <label>Apellidos:
+                <input type="text" id="apellidosInput" placeholder="Ej: García López">
+            </label>
+            <label>Fecha de Nacimiento:
+                <input type="date" id="fechaNacimiento">
+            </label>
         </div>
     </fieldset>
+
     <div class="botones">
-        <button type="submit">Enviar Solicitud</button>
-        <button type="reset">Limpiar datos</button>
+        <button type="button" class="btn-enviar" onclick="actv1()">Procesar Inscripción</button>
+        <button type="reset" class="btn-limpiar">Limpiar</button>
     </div>
 </form>
 
-<p id="mesaje"></p>
-<button id="boton" onclick="actv1()">Actividad</button>
-
+<div id="mesaje"></div>
 
 </body>
 </html>
