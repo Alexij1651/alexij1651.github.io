@@ -1,81 +1,62 @@
 const FILAS = 20;
-        const COLUMNAS = 20;
-        let tesoroX, tesoroY, intentos, juegoTerminado;
+const COLUMNAS = 20;
 
-        const gridElement = document.getElementById('mapa');
-        const intentosElement = document.getElementById('intentos');
-        const mensajeElement = document.getElementById('mensaje');
-        const pistaElement = document.getElementById('pista');
+let tesoroX, tesoroY, intentos, juegoTerminado;
 
-        function iniciarJuego() {
-            // Posición del tesoro
-            tesoroX = Math.floor(Math.random() * FILAS);
-            tesoroY = Math.floor(Math.random() * COLUMNAS);
-            intentos = 10;
-            juegoTerminado = false;
+function iniciarJuego() {
+    // Resetear variables de estado
+    tesoroX = Math.floor(Math.random() * FILAS);
+    tesoroY = Math.floor(Math.random() * COLUMNAS);
+    intentos = 10; // Según el HTML
+    juegoTerminado = false;
 
-            // Reset de textos
-            intentosElement.textContent = intentos;
-            mensajeElement.textContent = "¡Buena suerte, pirata!";
-            pistaElement.textContent = "";
-            gridElement.innerHTML = "";
+    // Limpiar UI
+    const mapa = document.getElementById("mapa");
+    mapa.innerHTML = "";
+    document.getElementById("intentos").textContent = intentos;
+    document.getElementById("pista").textContent = "";
+    document.getElementById("mensaje").textContent = "Haz clic en una cuadrícula para excavar";
 
-            // Generar celdas
-            for (let f = 0; f < FILAS; f++) {
-                for (let c = 0; c < COLUMNAS; c++) {
-                    const div = document.createElement('div');
-                    div.className = 'celda';
-                    div.dataset.f = f;
-                    div.dataset.c = c;
-                    div.onclick = verificar;
-                    gridElement.appendChild(div);
-                }
-            }
-            console.log("Mapa generado. Tesoro en:", tesoroX, tesoroY);
+    // Generar la cuadrícula
+    for (let f = 0; f < FILAS; f++) {
+        for (let c = 0; c < COLUMNAS; c++) {
+            const celda = document.createElement("div");
+            celda.classList.add("celda");
+            celda.addEventListener("click", () => realizarJugada(f, c, celda));
+            mapa.appendChild(celda);
         }
+    }
+}
 
-        function verificar(e) {
-            if (juegoTerminado) return;
+function realizarJugada(x, y, elemento) {
+    if (juegoTerminado || elemento.classList.contains("visitada")) return;
 
-            const celda = e.target;
-            const f = parseInt(celda.dataset.f);
-            const c = parseInt(celda.dataset.c);
+    if (x === tesoroX && y === tesoroY) {
+        elemento.classList.add("tesoro");
+        elemento.textContent = "👑";
+        document.getElementById("mensaje").textContent = "¡HAS ENCONTRADO EL TESORO!";
+        juegoTerminado = true;
+    } else {
+        intentos--;
+        document.getElementById("intentos").textContent = intentos;
+        elemento.classList.add("visitada");
+        elemento.textContent = "❌";
 
-            if (f === tesoroX && c === tesoroY) {
-                celda.classList.add('tesoro');
-                celda.innerHTML = "💰";
-                mensajeElement.textContent = "¡LO ENCONTRASTE! 🎉";
-                juegoTerminado = true;
-            } else {
-                intentos--;
-                intentosElement.textContent = intentos;
-                celda.classList.add('fallo');
+        // Generar pista
+        let pista = "El tesoro está al ";
+        if (x < tesoroX) pista += "Sur ";
+        if (x > tesoroX) pista += "Norte ";
+        if (y < tesoroY) pista += "Este ";
+        if (y > tesoroY) pista += "Oeste ";
 
-                // Pista
-                let p = "El tesoro está al ";
-                if (f < tesoroX) p += "SUR ";
-                if (f > tesoroX) p += "NORTE ";
-                if (c < tesoroY) p += "ESTE ";
-                if (c > tesoroY) p += "OESTE ";
-                pistaElement.textContent = p;
+        document.getElementById("pista").textContent = "Pista: " + pista;
 
-                if (intentos <= 0) {
-                    mensajeElement.textContent = "Perdiste. Estaba en Fila " + tesoroX + ", Columna " + tesoroY;
-                    juegoTerminado = true;
-                    revelarTesoro();
-                }
-            }
+        if (intentos <= 0) {
+            document.getElementById("mensaje").textContent = `Game Over. El tesoro estaba en [${tesoroX}, ${tesoroY}]`;
+            juegoTerminado = true;
         }
+    }
+}
 
-        function revelarTesoro() {
-            const celdas = document.querySelectorAll('.celda');
-            celdas.forEach(celda => {
-                if (parseInt(celda.dataset.f) === tesoroX && parseInt(celda.dataset.c) === tesoroY) {
-                    celda.classList.add('tesoro');
-                    celda.innerHTML = "📍";
-                }
-            });
-        }
-
-        // Ejecutar al cargar
-        window.onload = iniciarJuego;
+// Iniciar al cargar la página
+window.onload = iniciarJuego;
