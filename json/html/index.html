@@ -1,92 +1,200 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Equipos de Fútbol</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/json/css/index.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejercicios JSON - JavaScript</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="/json/css/index.css">
     <script src="/json/js/index.js"></script>
 </head>
 <body>
-    <div class="contenedor-principal">
  
-        <header>
-            <h1>Equipos de Fútbol</h1>
-            <p>Nombre del Alumno: ___________________________</p>
-        </header>
+<header>
+  <h1>Ejercicios JSON</h1>
+  <p>JavaScript · Actividades 1 – 7 · Interactivos</p>
+</header>
  
-        <!-- Zona de mensajes de éxito / error -->
-        <div id="contenedor-mensajes"></div>
+<div class="grid">
  
-        <main>
-            <!-- ── Formulario ── -->
-            <section class="seccion-formulario">
-                <h2 id="titulo-formulario">Añadir Equipo</h2>
-                <form id="formulario-contacto">
-                    <input type="hidden" id="modo-edicion" value="false">
- 
-                    <div class="grupo-entrada">
-                        <label for="contacto-id">Nombre del Equipo</label>
-                        <input type="text" id="contacto-id" placeholder="Ej. Real Madrid CF" required>
-                    </div>
-                    <div class="grupo-entrada">
-                        <label for="contacto-nombre">Entrenador</label>
-                        <input type="text" id="contacto-nombre" placeholder="Nombre del entrenador" required>
-                    </div>
-                    <div class="grupo-entrada">
-                        <label for="contacto-direccion">Máximo Goleador Histórico</label>
-                        <input type="text" id="contacto-direccion" placeholder="Nombre del goleador" required>
-                    </div>
-                    <div class="grupo-entrada">
-                        <label for="contacto-telefono">Año de Creación</label>
-                        <input type="number" id="contacto-telefono" placeholder="Ej. 1902" min="1800" max="2099" required>
-                    </div>
- 
-                    <div class="contenedor-botones">
-                        <button type="submit" id="boton-enviar" class="boton primario">Guardar Equipo</button>
-                        <button type="button" id="boton-cancelar" class="boton secundario oculto">Cancelar</button>
-                    </div>
-                </form>
-            </section>
- 
-            <!-- ── Tabla ── -->
-            <section class="seccion-tabla">
-                <div class="cabecera-tabla">
-                    <h2>Mis Equipos</h2>
-                    <div class="botones-tabla">
-                        <button id="boton-editar-global" class="boton info">Editar</button>
-                        <button id="boton-borrar-global" class="boton peligro">Borrar</button>
-                        <span id="contador-contactos">0 equipos</span>
-                    </div>
-                </div>
- 
-                <div class="tabla-scroll">
-                    <table id="tabla-contactos">
-                        <thead>
-                            <tr>
-                                <th>Sel.</th>
-                                <th>Equipo</th>
-                                <th>Entrenador</th>
-                                <th>Máx. Goleador</th>
-                                <th>Fundación</th>
-                            </tr>
-                        </thead>
-                        <tbody id="lista-contactos"></tbody>
-                    </table>
-                    <div id="estado-vacio" class="estado-vacio">
-                        <p>No hay equipos registrados. ¡Añade el primero!</p>
-                    </div>
-                </div>
-            </section>
-        </main>
- 
-        <footer><p>&copy; 2026 Equipos de Fútbol.</p></footer>
+  <!-- ═══════════════════════════════════════ ACT 1 ════════════════════════════════════════ -->
+  <div class="card">
+    <div class="card-header">
+      <span class="badge">ACT 1</span>
+      <span class="card-title">JSON.parse + manejo de errores</span>
     </div>
+    <div class="card-body">
+      <pre><span class="cmt">// JSON válido</span>
+<span class="kw">const</span> texto = <span class="str">'{"nombre":"Ana","edad":30}'</span>;
  
-    <script src="futbol_script.js"></script>
+<span class="kw">try</span> {
+  <span class="kw">const</span> obj = <span class="fn">JSON.parse</span>(texto);
+  console.<span class="fn">log</span>(obj.nombre);  <span class="cmt">// "Ana"</span>
+} <span class="kw">catch</span> (e) {
+  console.<span class="fn">error</span>(<span class="str">"JSON inválido:"</span>, e.message);
+}</pre>
+ 
+      <div class="output-label">▶ Salida</div>
+      <div class="output-box" id="out1"></div>
+ 
+      <div class="divider"></div>
+ 
+      <pre><span class="cmt">// JSON inválido – prueba de error</span>
+<span class="kw">const</span> malo = <span class="str">"{ nombre: 'Ana' }"</span>;
+<span class="kw">try</span> {
+  <span class="fn">JSON.parse</span>(malo);
+} <span class="kw">catch</span> (e) {
+  console.<span class="fn">error</span>(<span class="str">"Error:"</span>, e.message);
+}</pre>
+ 
+      <div class="output-label">▶ Error capturado</div>
+      <div class="output-box error" id="out1b"></div>
+ 
+      <button class="btn-primary" onclick="act1()">▶ Ejecutar</button>
+    </div>
+  </div>
+ 
+  <!-- ═══════════════════════════════════════ ACT 2 ════════════════════════════════════════ -->
+  <div class="card">
+    <div class="card-header">
+      <span class="badge">ACT 2</span>
+      <span class="card-title">JSON.stringify formateado</span>
+    </div>
+    <div class="card-body">
+      <pre><span class="kw">const</span> usuario = { <span class="key">nombre</span>: <span class="str">"Pedro"</span>, <span class="key">edad</span>: <span class="num">40</span> };
+ 
+<span class="cmt">// Convertir a JSON formateado (2 espacios)</span>
+<span class="kw">const</span> json = <span class="fn">JSON.stringify</span>(usuario, <span class="kw">null</span>, <span class="num">2</span>);
+console.<span class="fn">log</span>(json);</pre>
+ 
+      <div class="output-label">▶ Resultado</div>
+      <div class="output-box" id="out2"></div>
+ 
+      <button class="btn-primary" onclick="act2()">▶ Ejecutar</button>
+    </div>
+  </div>
+ 
+  <!-- ═══════════════════════════════════════ ACT 3 ════════════════════════════════════════ -->
+  <div class="card">
+    <div class="card-header">
+      <span class="badge">ACT 3</span>
+      <span class="card-title">Corrección de JSON inválido</span>
+    </div>
+    <div class="card-body">
+      <div class="info-box">
+        <strong>❌ Código con errores:</strong><br><br>
+        <code>const mal = "{ nombre: 'Ana' }";</code><br>
+        <code>JSON.parse(mal);</code>
+      </div>
+ 
+      <div style="font-size:.85rem; line-height:1.7; color:var(--text-muted);">
+        <strong style="color:var(--text)">Errores encontrados:</strong><br>
+        <span class="tag">1</span> Las <strong style="color:var(--accent)">claves</strong> deben ir entre comillas dobles: <code>"nombre"</code><br>
+        <span class="tag">2</span> Los <strong style="color:var(--accent)">valores string</strong> deben usar comillas dobles: <code>"Ana"</code><br>
+        <span class="tag">3</span> JSON <strong style="color:var(--accent)">no admite comillas simples</strong> (solo dobles)
+      </div>
+ 
+      <div class="info-box fix">
+        <strong>✅ Código corregido:</strong><br><br>
+        <code>const bien = '{"nombre": "Ana"}';</code><br>
+        <code>const obj = JSON.parse(bien);</code>
+      </div>
+ 
+      <div class="output-label">▶ Resultado correcto</div>
+      <div class="output-box" id="out3"></div>
+ 
+      <button class="btn-primary" onclick="act3()">▶ Verificar</button>
+    </div>
+  </div>
+ 
+  <!-- ═══════════════════════════════════════ ACT 4 ════════════════════════════════════════ -->
+  <div class="card">
+    <div class="card-header">
+      <span class="badge">ACT 4</span>
+      <span class="card-title">Array de personas · filtro y media</span>
+    </div>
+    <div class="card-body">
+      <pre><span class="kw">const</span> personasJSON = <span class="str">`[
+  {"nombre":"Ana","edad":30},
+  {"nombre":"Pedro","edad":40},
+  {"nombre":"Lucia","edad":25}
+]`</span>;
+ 
+<span class="kw">const</span> personas = <span class="fn">JSON.parse</span>(personasJSON);
+ 
+<span class="cmt">// Mayores de 30</span>
+<span class="kw">const</span> mayores = personas.<span class="fn">filter</span>(p => p.edad > <span class="num">30</span>);
+ 
+<span class="cmt">// Edad media</span>
+<span class="kw">const</span> media = personas.<span class="fn">reduce</span>((s,p)=>s+p.edad,<span class="num">0</span>)/personas.length;</pre>
+ 
+      <div class="output-label">▶ Mayores de 30</div>
+      <div class="output-box" id="out4a"></div>
+      <div class="output-label">▶ Edad media</div>
+      <div class="output-box" id="out4b"></div>
+ 
+      <button class="btn-primary" onclick="act4()">▶ Ejecutar</button>
+    </div>
+  </div>
+ 
+  <!-- ═══════════════════════════════════════ ACT 5 ════════════════════════════════════════ -->
+  <div class="card wide">
+    <div class="card-header">
+      <span class="badge">ACT 5</span>
+      <span class="card-title">Añadir persona desde formulario</span>
+    </div>
+    <div class="card-body">
+      <div class="form-row">
+        <label>Nombre <input type="text" id="inp5nombre" placeholder="Ej: Antonio"></label>
+        <label>Edad   <input type="number" id="inp5edad" placeholder="Ej: 50" min="0" max="150"></label>
+        <button class="btn-primary" style="margin-bottom:0" onclick="act5()">＋ Añadir</button>
+      </div>
+ 
+      <div class="output-label" style="margin-top:.5rem;">▶ Array actualizado (JSON)</div>
+      <div class="output-box" id="out5" style="max-height:180px; overflow-y:auto;"></div>
+ 
+      <div id="count5" style="margin-top:.3rem;"></div>
+    </div>
+  </div>
+ 
+  <!-- ═══════════════════════════════════════ ACT 6 ════════════════════════════════════════ -->
+  <div class="card wide">
+    <div class="card-header">
+      <span class="badge">ACT 6</span>
+      <span class="card-title">Tabla de personas con colores</span>
+    </div>
+    <div class="card-body">
+      <div class="form-row">
+        <label>Nombre <input type="text" id="inp6nombre" placeholder="Nombre"></label>
+        <label>Edad   <input type="number" id="inp6edad" placeholder="Edad" min="0" max="150"></label>
+        <button class="btn-primary" onclick="act6add()">＋ Añadir</button>
+        <button class="btn-secondary" onclick="act6render()">⟳ Actualizar tabla</button>
+      </div>
+      <div id="tabla6wrap"></div>
+    </div>
+  </div>
+ 
+  <!-- ═══════════════════════════════════════ ACT 7 ════════════════════════════════════════ -->
+  <div class="card wide">
+    <div class="card-header">
+      <span class="badge">ACT 7</span>
+      <span class="card-title">Agenda — fichero JSON + tabla con filas alternas</span>
+    </div>
+    <div class="card-body">
+      <pre><span class="cmt">// agenda.json (muestra del contenido generado)</span>
+<span class="str">[
+  { "nombre":"...", "apellido1":"...", "apellido2":"...",
+    "direccion":"...", "telefono":"..." }, ...
+]</span></pre>
+ 
+      <div id="tabla7wrap"></div>
+ 
+      <button class="btn-secondary" onclick="descargarJSON()" style="margin-top:.5rem;">
+        ⬇ Descargar agenda.json
+      </button>
+    </div>
+  </div>
+ 
+</div><!-- /grid -->
 </body>
 </html>
