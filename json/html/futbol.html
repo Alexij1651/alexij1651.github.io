@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipos de Fútbol</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="/json/css/futbol.css">
+    <script src="/json/js/futbol.js"></script>
+</head>
+<body>
+ 
+  <div class="hero">
+    <div class="hero-label">JavaScript · JSON · forEach</div>
+    <h1>Equipos<br>de Fútbol</h1>
+    <p>Datos recorridos mediante <code>generarTabla(datos)</code></p>
+    <div class="hero-count">⚽ <span id="total">0</span> equipos cargados</div>
+  </div>
+ 
+  <div class="container">
+ 
+    <div class="code-section">
+      <div class="code-bar">
+        <span class="dot dot-r"></span>
+        <span class="dot dot-y"></span>
+        <span class="dot dot-g"></span>
+        <span>script.js — generarTabla(datos)</span>
+      </div>
+      <pre><span class="cmt">// Función que recorre el array y construye la tabla en el DOM</span>
+<span class="kw">function</span> <span class="fn">generarTabla</span>(datos) {
+ 
+  <span class="cmt">// 1. Seleccionamos el contenedor donde inyectaremos la tabla</span>
+  <span class="kw">const</span> contenedor = document.<span class="fn">getElementById</span>(<span class="str">"tabla-container"</span>);
+ 
+  <span class="cmt">// 2. Construimos la cabecera con los nombres de los campos</span>
+  <span class="kw">let</span> html = <span class="str">`&lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th class="col-idx"&gt;#&lt;/th&gt;
+        &lt;th&gt;NOMBRE&lt;/th&gt;
+        &lt;th&gt;ENTRENADOR&lt;/th&gt;
+        &lt;th&gt;MÁX. GOLEADOR&lt;/th&gt;
+        &lt;th&gt;AÑO&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;`</span>;
+ 
+  <span class="cmt">// 3. Recorremos el array con forEach e insertamos cada equipo</span>
+  datos.<span class="fn">forEach</span>(<span class="kw">function</span>(equipo, indice) {
+    html += <span class="str">`&lt;tr&gt;
+      &lt;td class="col-idx"&gt;${indice + 1}&lt;/td&gt;
+      &lt;td class="col-nombre"&gt;${equipo.nombre}&lt;/td&gt;
+      &lt;td&gt;${equipo.entrenador}&lt;/td&gt;
+      &lt;td class="col-gol"&gt;${equipo.maximo_goleador_historico}&lt;/td&gt;
+      &lt;td class="col-anio"&gt;${equipo.anio_creacion}&lt;/td&gt;
+    &lt;/tr&gt;`</span>;
+  });
+ 
+  html += <span class="str">"&lt;/tbody&gt;&lt;/table&gt;"</span>;
+ 
+  <span class="cmt">// 4. Insertamos el HTML generado en el DOM</span>
+  contenedor.innerHTML = html;
+ 
+  <span class="cmt">// 5. Actualizamos el contador del hero</span>
+  document.<span class="fn">getElementById</span>(<span class="str">"total"</span>).textContent = datos.length;
+}</pre>
+    </div>
+ 
+    <p class="section-title">▶ Resultado</p>
+ 
+    <div class="table-wrap">
+      <div id="tabla-container"></div>
+    </div>
+ 
+    <div class="footer">Generado dinámicamente · datos.forEach() · innerHTML</div>
+  </div>
+ 
+  <script src="script.js"></script>
+</body>
+</html>

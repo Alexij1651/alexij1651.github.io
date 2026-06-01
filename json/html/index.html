@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipos de Fútbol</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/json/css/index.css">
+    <script src="/json/js/index.js"></script>
+</head>
+<body>
+    <div class="contenedor-principal">
+ 
+        <header>
+            <h1>Equipos de Fútbol</h1>
+            <p>Nombre del Alumno: ___________________________</p>
+        </header>
+ 
+        <!-- Zona de mensajes de éxito / error -->
+        <div id="contenedor-mensajes"></div>
+ 
+        <main>
+            <!-- ── Formulario ── -->
+            <section class="seccion-formulario">
+                <h2 id="titulo-formulario">Añadir Equipo</h2>
+                <form id="formulario-contacto">
+                    <input type="hidden" id="modo-edicion" value="false">
+ 
+                    <div class="grupo-entrada">
+                        <label for="contacto-id">Nombre del Equipo</label>
+                        <input type="text" id="contacto-id" placeholder="Ej. Real Madrid CF" required>
+                    </div>
+                    <div class="grupo-entrada">
+                        <label for="contacto-nombre">Entrenador</label>
+                        <input type="text" id="contacto-nombre" placeholder="Nombre del entrenador" required>
+                    </div>
+                    <div class="grupo-entrada">
+                        <label for="contacto-direccion">Máximo Goleador Histórico</label>
+                        <input type="text" id="contacto-direccion" placeholder="Nombre del goleador" required>
+                    </div>
+                    <div class="grupo-entrada">
+                        <label for="contacto-telefono">Año de Creación</label>
+                        <input type="number" id="contacto-telefono" placeholder="Ej. 1902" min="1800" max="2099" required>
+                    </div>
+ 
+                    <div class="contenedor-botones">
+                        <button type="submit" id="boton-enviar" class="boton primario">Guardar Equipo</button>
+                        <button type="button" id="boton-cancelar" class="boton secundario oculto">Cancelar</button>
+                    </div>
+                </form>
+            </section>
+ 
+            <!-- ── Tabla ── -->
+            <section class="seccion-tabla">
+                <div class="cabecera-tabla">
+                    <h2>Mis Equipos</h2>
+                    <div class="botones-tabla">
+                        <button id="boton-editar-global" class="boton info">Editar</button>
+                        <button id="boton-borrar-global" class="boton peligro">Borrar</button>
+                        <span id="contador-contactos">0 equipos</span>
+                    </div>
+                </div>
+ 
+                <div class="tabla-scroll">
+                    <table id="tabla-contactos">
+                        <thead>
+                            <tr>
+                                <th>Sel.</th>
+                                <th>Equipo</th>
+                                <th>Entrenador</th>
+                                <th>Máx. Goleador</th>
+                                <th>Fundación</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lista-contactos"></tbody>
+                    </table>
+                    <div id="estado-vacio" class="estado-vacio">
+                        <p>No hay equipos registrados. ¡Añade el primero!</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+ 
+        <footer><p>&copy; 2026 Equipos de Fútbol.</p></footer>
+    </div>
+ 
+    <script src="futbol_script.js"></script>
+</body>
+</html>
