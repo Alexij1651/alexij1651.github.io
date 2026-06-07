@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boletín 6 - Local Storage</title>
+    <link rel="stylesheet" href="../css/boletin6.css">
+    <script src="../js/boletin6.js" defer></script>
+</head>
+<body>
+
+<h1 class="titulo">USO DE LOCAL STORAGE</h1>
+<h2 class="subtitulo">Tabla de recetas con colores persistentes</h2>
+
+<div class="controles">
+    <div class="selector">
+        <label for="colorPar">Color filas pares:</label>
+        <select id="colorPar" onchange="cambiarColor()">
+            <option value="#efebe9">Marrón claro (defecto)</option>
+            <option value="#e3f2fd">Azul claro</option>
+            <option value="#e8f5e9">Verde claro</option>
+            <option value="#fff9c4">Amarillo claro</option>
+            <option value="#fce4ec">Rosa claro</option>
+            <option value="#f3e5f5">Morado claro</option>
+        </select>
+    </div>
+
+    <div class="selector">
+        <label for="colorImpar">Color filas impares:</label>
+        <select id="colorImpar" onchange="cambiarColor()">
+            <option value="#ffffff">Blanco (defecto)</option>
+            <option value="#bbdefb">Azul medio</option>
+            <option value="#c8e6c9">Verde medio</option>
+            <option value="#fff176">Amarillo medio</option>
+            <option value="#f8bbd0">Rosa medio</option>
+            <option value="#e1bee7">Morado medio</option>
+        </select>
+    </div>
+</div>
+
+<div class="tabla-contenedor">
+    <table id="tablaRecetas">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre Receta</th>
+                <th>Ingredientes</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="fila-impar">
+                <td>1</td>
+                <td>Salmorejo</td>
+                <td>Tomate, aceite y pan</td>
+            </tr>
+            <tr class="fila-par">
+                <td>2</td>
+                <td>Gachas</td>
+                <td>Harina, agua y azucar</td>
+            </tr>
+            <tr class="fila-impar" style="font-weight:bold">
+                <td>3</td>
+                <td>Migas</td>
+                <td>Pan, ajo y aceite</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

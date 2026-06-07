@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 3 Act8 - Conversor Km/Millas</title>
+    <link rel="stylesheet" href="../css/pt3act8.css">
+    <script src="../js/boletin5pt3act8.js" defer></script>
+</head>
+<body>
+
+<h1 class="titulo">CONVERSOR KM / MILLAS</h1>
+<h2 class="subtitulo">Actividad 8 - Conversión de unidades</h2>
+
+<form class="formulario" onsubmit="event.preventDefault()">
+    <fieldset class="bloque">
+        <legend>Introduce el valor</legend>
+
+        <div class="fila">
+            <label>Cantidad:
+                <input type="number" id="cantidad" placeholder="Ej: 100" min="0" step="0.01">
+            </label>
+            <label>Unidad de origen:
+                <select id="unidad">
+                    <option value="km">Kilómetros → Millas</option>
+                    <option value="millas">Millas → Kilómetros</option>
+                </select>
+            </label>
+        </div>
+    </fieldset>
+
+    <div class="botones">
+        <button type="button" class="btn-enviar" onclick="actv8()">Convertir</button>
+        <button type="reset" class="btn-limpiar" onclick="document.getElementById('resultado').innerHTML=''">Limpiar</button>
+    </div>
+</form>
+
+<div id="resultado"></div>
+
+</body>
+</html>

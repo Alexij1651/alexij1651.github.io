@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 3 Act11 - Suma de N Números</title>
+    <link rel="stylesheet" href="../css/pt3act11.css">
+    <script src="../js/boletin5pt3act11.js" defer></script>
+</head>
+<body>
+
+<h1 class="titulo">SUMA DE N NÚMEROS</h1>
+<h2 class="subtitulo">Actividad 11 - Sumatorio en JavaScript</h2>
+
+<form class="formulario" onsubmit="event.preventDefault()">
+    <fieldset class="bloque">
+        <legend>Introduce un número</legend>
+
+        <div class="fila">
+            <label>Número N:
+                <input type="number" id="numero" placeholder="Ej: 10" min="0">
+            </label>
+        </div>
+    </fieldset>
+
+    <div class="botones">
+        <button type="button" class="btn-enviar" onclick="actv11()">Calcular Sumatorio</button>
+        <button type="reset" class="btn-limpiar" onclick="document.getElementById('resultado').innerHTML=''">Limpiar</button>
+    </div>
+</form>
+
+<div id="resultado"></div>
+
+</body>
+</html>

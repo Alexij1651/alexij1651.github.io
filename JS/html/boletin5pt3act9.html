@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 3 Act9 - Contador de Caracteres</title>
+    <link rel="stylesheet" href="../css/pt3act9.css">
+    <script src="../js/boletin5pt3act9.js" defer></script>
+</head>
+<body>
+
+<h1 class="titulo">CONTADOR DE CARACTERES</h1>
+<h2 class="subtitulo">Actividad 9 - String.length en JavaScript</h2>
+
+<form class="formulario" onsubmit="event.preventDefault()">
+    <fieldset class="bloque">
+        <legend>Introduce una cadena de texto</legend>
+
+        <div class="fila">
+            <label>Texto:
+                <input type="text" id="texto" placeholder="Ej: Hola Mundo">
+            </label>
+        </div>
+    </fieldset>
+
+    <div class="botones">
+        <button type="button" class="btn-enviar" onclick="actv9()">Contar Caracteres</button>
+        <button type="reset" class="btn-limpiar" onclick="document.getElementById('resultado').innerHTML=''">Limpiar</button>
+    </div>
+</form>
+
+<div id="resultado"></div>
+
+</body>
+</html>

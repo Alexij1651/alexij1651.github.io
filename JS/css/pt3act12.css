@@ -1,0 +1,93 @@
+:root {
+    --marron: #4e342e;
+    --gris-borde: #ccd1d6;
+    --fondo: #f9f9f9;
+}
+
+body {
+    background-color: var(--fondo);
+    font-family: Arial, sans-serif;
+    color: #333;
+    text-align: center;
+}
+
+.titulo {
+    color: var(--marron);
+    border-bottom: 3px solid var(--marron);
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #666;
+    margin-top: 0;
+}
+
+.botones {
+    margin: 20px auto;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.btn-enviar {
+    background-color: var(--marron);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-enviar:hover {
+    background-color: #3e2723;
+}
+
+.btn-limpiar {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#resultado {
+    max-width: 800px;
+    margin: 20px auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: var(--marron);
+    color: white;
+}
+
+thead th {
+    padding: 12px 16px;
+    text-align: center;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #efebe9;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fff;
+}
+
+tbody tr:last-child td {
+    font-weight: bold;
+}
+
+tbody td {
+    padding: 10px 16px;
+    border: 1px solid var(--gris-borde);
+    text-align: center;
+}

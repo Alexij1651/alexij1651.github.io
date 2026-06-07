@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 3 Act5 - Mes a Estación (If)</title>
+    <link rel="stylesheet" href="../css/pt3act4.css">
+    <script src="../js/boletin5pt3act5.js" defer></script>
+</head>
+<body>
+
+<h1 class="titulo">MES A ESTACIÓN</h1>
+<h2 class="subtitulo">Actividad 5 - If/Else en JavaScript</h2>
+
+<form class="formulario" onsubmit="event.preventDefault()">
+    <fieldset class="bloque">
+        <legend>Introduce el Mes</legend>
+
+        <div class="fila">
+            <label>Nombre del mes:
+                <input type="text" id="mes" placeholder="Ej: Enero">
+            </label>
+        </div>
+    </fieldset>
+
+    <div class="botones">
+        <button type="button" class="btn-enviar" onclick="actv5()">Ver Estación</button>
+        <button type="reset" class="btn-limpiar" onclick="document.getElementById('resultado').innerHTML=''">Limpiar</button>
+    </div>
+</form>
+
+<div id="resultado"></div>
+
+</body>
+</html>

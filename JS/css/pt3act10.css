@@ -1,0 +1,90 @@
+:root {
+    --cyan: #00695c;
+    --gris-borde: #ccd1d6;
+    --fondo: #f9f9f9;
+}
+
+body {
+    background-color: var(--fondo);
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.titulo {
+    color: var(--cyan);
+    border-bottom: 3px solid var(--cyan);
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #666;
+    margin-top: 0;
+}
+
+.formulario {
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border: 1px solid var(--gris-borde);
+}
+
+.bloque {
+    border: 1px solid var(--gris-borde);
+    padding: 15px;
+}
+
+legend {
+    font-weight: bold;
+    color: var(--cyan);
+    padding: 0 5px;
+}
+
+.fila {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+input {
+    margin-top: 5px;
+    padding: 8px;
+    border: 1px solid #999;
+    font-size: 0.95rem;
+}
+
+.botones {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-enviar {
+    background-color: var(--cyan);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.btn-enviar:hover {
+    background-color: #004d40;
+}
+
+.btn-limpiar {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    cursor: pointer;
+}

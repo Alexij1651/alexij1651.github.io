@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 3 Act7 - Provincias Andaluzas</title>
+    <link rel="stylesheet" href="../css/pt3act7.css">
+    <script src="../js/boletin5pt3act7.js" defer></script>
+</head>
+<body>
+
+<h1 class="titulo">PROVINCIAS ANDALUZAS</h1>
+<h2 class="subtitulo">Actividad 7 - Select en JavaScript</h2>
+
+<form class="formulario" onsubmit="event.preventDefault()">
+    <fieldset class="bloque">
+        <legend>Datos Personales</legend>
+
+        <div class="fila">
+            <label>Nombre:
+                <input type="text" id="nombre" placeholder="Ej: Juan">
+            </label>
+            <label>Provincia:
+                <select id="provincia">
+                    <option value="">-- Selecciona una provincia --</option>
+                    <option value="almeriense">Almería</option>
+                    <option value="gaditano">Cádiz</option>
+                    <option value="cordobés">Córdoba</option>
+                    <option value="granadino">Granada</option>
+                    <option value="onubense">Huelva</option>
+                    <option value="jienense">Jaén</option>
+                    <option value="malagueño">Málaga</option>
+                    <option value="sevillano">Sevilla</option>
+                </select>
+            </label>
+            <label>Pueblo:
+                <input type="text" id="pueblo" placeholder="Ej: Pozoblanco">
+            </label>
+        </div>
+    </fieldset>
+
+    <div class="botones">
+        <button type="button" class="btn-enviar" onclick="actv7()">Generar Frase</button>
+        <button type="reset" class="btn-limpiar" onclick="document.getElementById('resultado').innerHTML=''">Limpiar</button>
+    </div>
+</form>
+
+<div id="resultado"></div>
+
+</body>
+</html>

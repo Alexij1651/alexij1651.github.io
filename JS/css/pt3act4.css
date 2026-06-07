@@ -1,0 +1,115 @@
+:root {
+    --rojo: #c62828;
+    --gris-borde: #ccd1d6;
+    --fondo: #f9f9f9;
+}
+
+body {
+    background-color: var(--fondo);
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.titulo {
+    color: var(--rojo);
+    border-bottom: 3px solid var(--rojo);
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #666;
+    margin-top: 0;
+}
+
+.formulario {
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border: 1px solid var(--gris-borde);
+}
+
+.bloque {
+    border: 1px solid var(--gris-borde);
+    padding: 15px;
+}
+
+legend {
+    font-weight: bold;
+    color: var(--rojo);
+    padding: 0 5px;
+}
+
+.fila {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+input {
+    margin-top: 5px;
+    padding: 8px;
+    border: 1px solid #999;
+}
+
+.botones {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-enviar {
+    background-color: var(--rojo);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.btn-enviar:hover {
+    background-color: #b71c1c;
+}
+
+.btn-limpiar {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.resultado-oficial {
+    max-width: 800px;
+    margin: 20px auto;
+    background: red;
+    color: yellow;
+    padding: 20px;
+    text-align: center;
+}
+
+.estacion {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.error {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    border: 2px solid var(--rojo);
+    padding: 20px;
+    text-align: center;
+    color: var(--rojo);
+    font-weight: bold;
+}

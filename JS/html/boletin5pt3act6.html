@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 3 Act6 - Calculadora IVA</title>
+    <link rel="stylesheet" href="../css/pt3act6.css">
+    <script src="../js/boletin5pt3act6.js" defer></script>
+</head>
+<body>
+
+<h1 class="titulo">CALCULADORA DE IVA</h1>
+<h2 class="subtitulo">Actividad 6 - Condicionales en JavaScript</h2>
+
+<form class="formulario" onsubmit="event.preventDefault()">
+    <fieldset class="bloque">
+        <legend>Datos del Pago</legend>
+
+        <div class="fila">
+            <label>Nombre:
+                <input type="text" id="nombre" placeholder="Ej: Juan García">
+            </label>
+            <label>Cantidad a pagar (€):
+                <input type="number" id="cantidad" placeholder="Ej: 4500" min="0" step="0.01">
+            </label>
+        </div>
+    </fieldset>
+
+    <div class="botones">
+        <button type="button" class="btn-enviar" onclick="actv6()">Calcular IVA</button>
+        <button type="reset" class="btn-limpiar" onclick="document.getElementById('resultado').innerHTML=''">Limpiar</button>
+    </div>
+</form>
+
+<div id="resultado"></div>
+
+</body>
+</html>
