@@ -6,10 +6,10 @@ const personasIniciales = [
   { nombre: "Pedro", edad: 40 },
   { nombre: "Lucia", edad: 25 }
 ];
-
+ 
 let personas5 = [...personasIniciales];
 let personas6 = [...personasIniciales];
-
+ 
 /* ── AGENDA (Actividad 7) ──────────────────────── */
 const agenda = [
   { nombre:"Ana",      apellido1:"García",    apellido2:"López",    direccion:"Calle Mayor 1, Madrid",       telefono:"611 111 111" },
@@ -23,7 +23,7 @@ const agenda = [
   { nombre:"Elena",    apellido1:"Ramírez",   apellido2:"Castro",   direccion:"C/ Luna 4, Bilbao",           telefono:"699 999 999" },
   { nombre:"Roberto",  apellido1:"López",     apellido2:"Herrero",  direccion:"Gran Vía 88, Granada",        telefono:"600 000 000" }
 ];
-
+ 
 /* ════════════════════════════════════════════════════
    ACTIVIDAD 1
 ════════════════════════════════════════════════════ */
@@ -36,7 +36,7 @@ function act1() {
   } catch(e) {
     document.getElementById('out1').textContent = 'Error: ' + e.message;
   }
-
+ 
   // Inválido
   const malo = "{ nombre: 'Ana' }";
   try {
@@ -45,7 +45,7 @@ function act1() {
     document.getElementById('out1b').textContent = 'SyntaxError: ' + e.message;
   }
 }
-
+ 
 /* ════════════════════════════════════════════════════
    ACTIVIDAD 2
 ════════════════════════════════════════════════════ */
@@ -54,7 +54,7 @@ function act2() {
   const json = JSON.stringify(usuario, null, 2);
   document.getElementById('out2').textContent = json;
 }
-
+ 
 /* ════════════════════════════════════════════════════
    ACTIVIDAD 3
 ════════════════════════════════════════════════════ */
@@ -68,7 +68,7 @@ function act3() {
     document.getElementById('out3').textContent = 'Error: ' + e.message;
   }
 }
-
+ 
 /* ════════════════════════════════════════════════════
    ACTIVIDAD 4
 ════════════════════════════════════════════════════ */
@@ -81,36 +81,36 @@ function act4() {
   const ps = JSON.parse(personasJSON);
   const mayores = ps.filter(p => p.edad > 30);
   const media = ps.reduce((s,p) => s + p.edad, 0) / ps.length;
-
+ 
   document.getElementById('out4a').textContent =
     mayores.map(p => `${p.nombre} (${p.edad} años)`).join('\n');
   document.getElementById('out4b').textContent =
     `Media de edad: ${media.toFixed(2)} años`;
 }
-
+ 
 /* ════════════════════════════════════════════════════
    ACTIVIDAD 5
 ════════════════════════════════════════════════════ */
 function act5() {
   const nombre = document.getElementById('inp5nombre').value.trim();
   const edad   = parseInt(document.getElementById('inp5edad').value);
-
+ 
   if (!nombre || isNaN(edad)) {
     alert('⚠️ Introduce nombre y edad válidos.');
     return;
   }
-
+ 
   personas5.push({ nombre, edad });
   document.getElementById('inp5nombre').value = '';
   document.getElementById('inp5edad').value   = '';
-
+ 
   const out = document.getElementById('out5');
   out.textContent = JSON.stringify(personas5, null, 2);
-
+ 
   const cnt = document.getElementById('count5');
   cnt.innerHTML = `<span class="count-badge">👥 ${personas5.length} personas en el array</span>`;
 }
-
+ 
 /* ════════════════════════════════════════════════════
    ACTIVIDAD 6
 ════════════════════════════════════════════════════ */
@@ -118,17 +118,17 @@ function act6add() {
   const nombre = document.getElementById('inp6nombre').value.trim();
   const edad   = parseInt(document.getElementById('inp6edad').value);
   if (!nombre || isNaN(edad)) { alert('⚠️ Introduce nombre y edad válidos.'); return; }
-
+ 
   personas6.push({ nombre, edad });
   document.getElementById('inp6nombre').value = '';
   document.getElementById('inp6edad').value   = '';
   act6render();
 }
-
+ 
 function act6render() {
   const wrap = document.getElementById('tabla6wrap');
   if (personas6.length === 0) { wrap.innerHTML = ''; return; }
-
+ 
   let html = `
   <div class="table-wrap" style="margin-top:.5rem;">
     <table>
@@ -139,7 +139,7 @@ function act6render() {
         </tr>
       </thead>
       <tbody>`;
-
+ 
   personas6.forEach((p, i) => {
     const bg = i % 2 === 0 ? '#141b30' : '#1a2340';
     html += `<tr>
@@ -147,18 +147,18 @@ function act6render() {
       <td style="background:${bg}">${p.edad}</td>
     </tr>`;
   });
-
+ 
   html += `</tbody></table></div>`;
   wrap.innerHTML = html;
 }
-
+ 
 /* ════════════════════════════════════════════════════
    ACTIVIDAD 7
 ════════════════════════════════════════════════════ */
 function renderAgenda() {
   const campos = ['nombre','apellido1','apellido2','direccion','telefono'];
   const labels = ['Nombre','Apellido 1','Apellido 2','Dirección','Teléfono'];
-
+ 
   let html = `
   <div class="table-wrap">
     <table>
@@ -166,16 +166,16 @@ function renderAgenda() {
         <tr>${labels.map(l=>`<th class="agenda-th">${l}</th>`).join('')}</tr>
       </thead>
       <tbody>`;
-
+ 
   agenda.forEach((p, i) => {
     const cls = i % 2 === 0 ? 'agenda-even' : 'agenda-odd';
     html += `<tr>${campos.map(c=>`<td class="${cls}">${escHtml(p[c])}</td>`).join('')}</tr>`;
   });
-
+ 
   html += `</tbody></table></div>`;
   document.getElementById('tabla7wrap').innerHTML = html;
 }
-
+ 
 function descargarJSON() {
   const blob = new Blob([JSON.stringify(agenda, null, 2)], {type:'application/json'});
   const a = document.createElement('a');
@@ -183,14 +183,14 @@ function descargarJSON() {
   a.download = 'agenda.json';
   a.click();
 }
-
+ 
 function escHtml(str) {
   return String(str)
     .replace(/&/g,'&amp;')
     .replace(/</g,'&lt;')
     .replace(/>/g,'&gt;');
 }
-
+ 
 /* ════════════════════════════════════════════════════
    INIT — ejecutar todo al cargar
 ════════════════════════════════════════════════════ */
